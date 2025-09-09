@@ -1,47 +1,57 @@
 // Learn string manipulations, run these exos with PRJS
 
 export function getNumberOfChars(text) {
-  // TODO
+  return text.length;
 }
 
 export function getLowercaseVersion(text) {
-  // TODO
+  return text.toLowerCase();
 }
 
 export function getFirstIndex(text, substring) {
-  // TODO
+  return text.indexOf(substring);
 }
 
 export function getFirstIndexButAfter(text, substring, startPos) {
-  // TODO
+  return text.indexOf(substring, startPos);
 }
 
 export function countOccurencesOfChar(text, char) {
-  // TODO
+  let count = 0;
+  let i = -1;
+
+  while (count <= text.length) {
+    i = text.indexOf(char, i + 1);
+    if (i !== -1) count++;
+    else break;
+  }
+  return count;
 }
 
 export function containsAGivenWord(text, word) {
-  // TODO
+  return text.includes(word);
 }
 
 export function extractAMessage(text) {
-  // TODO
+  return text.split(":")[1].replace(/\.$/, "");
 }
 
 export function extractACode(text) {
-  // TODO
+  return text.match(/0x[a-zA-Z0-9]{1,3}/)?.[0] ?? null;
 }
 
 export function concatStrings(str1, str2, str3, str4) {
-  // TODO
+  return str1.concat(str2).concat(str3).concat(str4);
 }
 
 export function extractAllNumbers(text) {
-  // TODO
+  return text.match(/\d+(\.\d+)?(e\d+)?/g);
+
 }
 
 export function buildAcronym(fullname) {
-  // TODO
+  const [first, last] = fullname.split(' ');
+  return (first.at(0) + last.at(0) + last.at(last.length - 1)).toUpperCase();
 }
 
 export function countLengthOfWords(sentence) {
@@ -79,3 +89,4 @@ export function parseExoWIP(raw) {
 export function parseParameters(command) {
   // TODO
 }
+
